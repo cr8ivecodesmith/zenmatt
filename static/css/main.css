@@ -11,11 +11,17 @@ body, input {
     font-size: 1.32em;
 }
 
+article > header > h1 {
+    line-height: 1.08em;
+}
+
+article > header > h1 > a,
 .header > h1 > a {
     color: #333;
     text-decoration: none;
 }
 
+article > header > h1 > a:hover,
 .header > h1 > a:hover {
     text-decoration: underline;
 }
