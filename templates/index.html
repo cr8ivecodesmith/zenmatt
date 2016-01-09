@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% if articles %}
+    {% for article in articles %}
+    <article role="article">
+        <header>
+            <h1>{{ article.title }}</h1>
+            <p class="article-meta">
+                <time class="entry-date" datetime="{{ article.data.isoformat() }}">
+                    {{ article.local_date }}
+                </time> |
+                <span class="category">{{ category }}</span>
+            </p>
+        </header>
+        <div class="article-content">
+            {{ article.content }}
+        </div>
+    </article>
+    {% endfor %}
+{% else %}
+<p>A nice piece of empty space :)</p>
+{% endif %}
+{% endblock content %}

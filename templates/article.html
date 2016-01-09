@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block title %} : {{ article.title }}{% endblock title %}
+
+{% block content %}
+<article role="article">
+    <header>
+        <h1>{{ article.title }}</h1>
+        <p class="article-meta">
+            <time class="entry-date" datetime="{{ article.data.isoformat() }}">
+                {{ article.local_date }}
+            </time> |
+            <span class="category">{{ category }}</span>
+        </p>
+    </header>
+    <div class="article-content">
+        {{ article.content }}
+    </div>
+    <footer class="article-footer">
+        <p class="article-nav-links">
+            {% if articles_page.has_previous() %}
+            <a class="prev-article" href="{{ articles_previous_page.url }}">
+                &laquo; {{ articles_previous_page.title }}
+            </a>
+            {% endif %}
+            {% if articles_page.has_next() %}
+            <a class="next-article" href="{{ articles_next_page.url }}">
+                {{ articles_next_page.title }} &raquo;
+            </a>
+        </p>
+    </footer>
+</article>
+{% endblock content %}

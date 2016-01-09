@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="{{ DEFAULT_LANG }}">
+<head>
+    {% block head %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Matt Lebrun">
+    <meta name="description" content="a tapestry of hacks, experiments, and musings of a programmer">
+
+    <title>{{ SITENAME }}{% block title %}{% endblock title %}</title>
+
+    <link rel="stylesheet" href="{{ SITEURL }}/theme/css/main.css">
+    {% endblock head %}
+</head>
+
+<body>
+<div id="layout">
+    {% include 'side-menu.html' %}
+    <div id="main">
+        <!-- SITE_HEADER:START -->
+        <header class="header">
+            <h1><a href="{{ SITEURL }}/">{{ SITENAME }}</a></h1>
+            <h2>{{ SITESUBTITLE }}</h2>
+        </header>
+        <!-- SITE_HEADER:END -->
+
+        <div class="content">
+            {% block content %}
+        </div>
+
+        <!-- SITE_FOOTER:START -->
+        <footer class="footer">
+            <div class="pure-menu pure-menu-horizontal">
+                <p class="pure-menu-heading">&copy; {{ COPYRIGHT_YEAR }} {{ COPYRIGHT_AUTHOR }}</p>
+                <ul class="pure-menu-list">
+                    <li class="pure-menu-item">
+                    <a class="pure-menu-link" href="https://twitter.com/{{ TWITTER_USER }}">Twitter</a>
+                    </li>
+                    <li class="pure-menu-item">
+                    <a class="pure-menu-link" href="{{ SITEURL }}/archives.html">Archive</a>
+                    </li>
+                    <li class="pure-menu-item">
+                    <a class="pure-menu-link" href="{{ SITEURL }}/{{ FEED }}">Feeds</a>
+                    </li>
+                </ul>
+            </div>
+        </footer>
+        <!-- SITE_FOOTER:END -->
+    </div> <!-- END:main -->
+</div> <!-- END:layout -->
+<!--
+JS Section
+-->
+<script src="{{ SITEURL }}/theme/js/pure/ui.js"></script>
+</body>
+</html>
