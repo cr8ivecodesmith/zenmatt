@@ -1,24 +1,30 @@
 {% extends 'base.html' %}
 
 {% block content %}
-{% if articles %}
-    {% for article in articles %}
-    <article role="article">
-        <header>
-            <h1>{{ article.title }}</h1>
-            <p class="article-meta">
-                <time class="entry-date" datetime="{{ article.data.isoformat() }}">
-                    {{ article.local_date }}
-                </time> |
-                <span class="category">{{ category }}</span>
-            </p>
-        </header>
-        <div class="article-content">
-            {{ article.content }}
-        </div>
-    </article>
-    {% endfor %}
-{% else %}
-<p>A nice piece of empty space :)</p>
-{% endif %}
+    {% if articles %}
+        {% for article in articles %}
+        <hr>
+        <article role="article">
+            <header>
+                <h1><a href="{{ article.url }}">{{ article.title }}</a></h1>
+                <p class="article-meta">
+                    {% if article.date %}
+                    <time class="entry-date" datetime="{{ article.date.isoformat() }}">
+                        {{ article.date|strftime('%b %d, %Y') }}
+                    </time>
+                    {% endif %}
+                    {% if category %}
+                        {% if article.date %} | {% endif %}
+                    <span class="category">{{ category }}</span>
+                    {% endif %}
+                </p>
+            </header>
+            <div class="article-content">
+                {{ article.summary }}
+            </div>
+        </article>
+        {% endfor %}
+    {% else %}
+    <p>A nice piece of empty space :)</p>
+    {% endif %}
 {% endblock content %}

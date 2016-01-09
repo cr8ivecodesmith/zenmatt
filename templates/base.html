@@ -7,6 +7,8 @@
     <meta name="author" content="Matt Lebrun">
     <meta name="description" content="a tapestry of hacks, experiments, and musings of a programmer">
 
+    <link rel="icon" type="image/ico" href="{{ SITEURL }}/theme/img/favicon.ico">
+
     <title>{{ SITENAME }}{% block title %}{% endblock title %}</title>
 
     <link rel="stylesheet" href="{{ SITEURL }}/theme/css/main.css">
@@ -25,7 +27,7 @@
         <!-- SITE_HEADER:END -->
 
         <div class="content">
-            {% block content %}
+            {% block content %}{% endblock content %}
         </div>
 
         <!-- SITE_FOOTER:START -->

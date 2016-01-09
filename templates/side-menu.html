@@ -6,6 +6,7 @@
 <div id="menu">
     <div class="pure-menu">
         <ul class="pure-menu-list">
+            <li class="pure-menu-item"><a href="{{ SITEURL }}/" class="pure-menu-link">Home</a></li>
             {% for title, link in MENUITEMS %}
             <li class="pure-menu-item"><a href="{{ link }}" class="pure-menu-link">{{ title }}</a></li>
             {% endfor %}
