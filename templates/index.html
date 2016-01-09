@@ -3,19 +3,21 @@
 {% block content %}
     {% if articles %}
         {% for article in articles %}
-        <hr>
+        {% if not loop.first %}<hr>{% endif %}
         <article role="article">
             <header>
-                <h1><a href="{{ article.url }}">{{ article.title }}</a></h1>
+                <h1><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></h1>
                 <p class="article-meta">
                     {% if article.date %}
                     <time class="entry-date" datetime="{{ article.date.isoformat() }}">
                         {{ article.date|strftime('%b %d, %Y') }}
                     </time>
                     {% endif %}
-                    {% if category %}
+                    {% if article.category %}
                         {% if article.date %} | {% endif %}
-                    <span class="category">{{ category }}</span>
+                        <span class="category"><a href="{{ SITEURL }}/category/{{ article.category }}.html">
+                            {{ article.category }}
+                        </a></span>
                     {% endif %}
                 </p>
             </header>

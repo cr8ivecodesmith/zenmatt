@@ -4,8 +4,8 @@
     {% block head %}
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="Matt Lebrun">
-    <meta name="description" content="a tapestry of hacks, experiments, and musings of a programmer">
+    <meta name="author" content="{{ AUTHOR }}">
+    <meta name="description" content="{{ SITESUBTITLE }}">
 
     <link rel="icon" type="image/ico" href="{{ SITEURL }}/theme/img/favicon.ico">
 
@@ -33,16 +33,16 @@
         <!-- SITE_FOOTER:START -->
         <footer class="footer">
             <div class="pure-menu pure-menu-horizontal">
-                <p class="pure-menu-heading">&copy; {{ COPYRIGHT_YEAR }} {{ COPYRIGHT_AUTHOR }}</p>
+                <p class="pure-menu-heading">{{ COPYRIGHT_TEXT }}</p>
                 <ul class="pure-menu-list">
                     <li class="pure-menu-item">
-                    <a class="pure-menu-link" href="https://twitter.com/{{ TWITTER_USER }}">Twitter</a>
+                    <a class="pure-menu-link" href="https://twitter.com/{{ TWITTER_USERNAME }}">Twitter</a>
                     </li>
                     <li class="pure-menu-item">
                     <a class="pure-menu-link" href="{{ SITEURL }}/archives.html">Archive</a>
                     </li>
                     <li class="pure-menu-item">
-                    <a class="pure-menu-link" href="{{ SITEURL }}/{{ FEED }}">Feeds</a>
+                    <a class="pure-menu-link" href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}">Feeds</a>
                     </li>
                 </ul>
             </div>

@@ -8,12 +8,14 @@
         <p class="article-meta">
             {% if article.date %}
             <time class="entry-date" datetime="{{ article.date.isoformat() }}">
-                {{ article.date|strftime('%b %d %Y') }}
+                {{ article.date|strftime('%b %d, %Y') }}
             </time>
             {% endif %}
             {% if category %}
                 {% if article.date %} | {% endif %}
-            <span class="category">{{ category }}</span>
+                <span class="category"><a href="{{ SITEURL }}/category/{{ category }}.html">
+                    {{ category }}
+                </a></span>
             {% endif %}
         </p>
     </header>
