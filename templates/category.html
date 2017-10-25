@@ -8,11 +8,14 @@
 {% block content %}
 {% include 'archives_filter.html' %}
 <div class="col-lg-12 col-md-12 col-sm-12">
-    <dl class="archive-link">
+    <div class="list-group archive-link">
     {% for article in dates %}
-        <dt>{{ article.locale_date }}</dt>
-        <dd><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title|trim }}</a></dd>
+        <a class="list-group-item list-group-item-action flex-column align-items-start"
+           href="{{ SITEURL }}/{{ article.url }}">
+            <small class="text-muted">{{ article.locale_date }}</small>
+            <p class="mb-1">{{ article.title|trim }}</p>
+        </a>
     {% endfor %}
-    </dl>
+    </div>
 </div>
 {% endblock %}
