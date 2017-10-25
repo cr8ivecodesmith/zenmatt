@@ -11,7 +11,7 @@
 {% if article %}
     {% include 'article_content.html' %}
     <div class="col-lg-12 col-md-12 col-sm-12">
-        <div class="section-sm archive-link">
+        <div class="section-top-sm section-bot-sm archive-link">
             <a href="{{ SITEURL }}/archives.html">
                 <strong>See all posts &raquo;</strong>
             </a>
@@ -23,3 +23,7 @@
 </div>
 {% endif %}
 {% endblock content %}
+
+{% block content_scripts %}
+    <script src="{{ SITEURL }}/theme/js/scripts.article.js"></script>
+{% endblock content_scripts %}

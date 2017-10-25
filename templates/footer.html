@@ -1,10 +1,21 @@
 <div class="col-lg-12 col-md-12 col-sm-12">
+    <div class="text-center section-bot-sm">
+        {% for _title, _url in LINKS %}
+            <a class="badge badge-light"
+               href="{{ _url }}">{{ _title }}</a>
+        {% endfor %}
+        {% for _title, _url in SOCIAL %}
+            <a class="badge badge-light"
+               href="{{ _url }}">{{ _title }}</a>
+        {% endfor %}
+    </div>
 </div>
-
 <div class="col-lg-12 col-md-12 col-sm-12">
-    <p class="text-left">
-    <span {% if COPYLEFT %}class="copy-left"{% endif %}>&copy;</span>
-    {% if COPYRIGHT_YEAR %}{{ COPYRIGHT_YEAR }} {% endif %}{{ SITENAME|trim }}
-    {% if SITESUBTITLE|trim %} - {{ SITESUBTITLE|trim }}{% endif %}
-    </p>
+    <div class="text-center">
+        <small class="text-muted">
+            <span {% if COPYLEFT %}class="copy-left"{% endif %}>&copy;</span>
+            {% if COPYRIGHT_YEAR %}{{ COPYRIGHT_YEAR }} {% endif %}{{ SITENAME|trim }}
+            {% if SITESUBTITLE|trim %} - {{ SITESUBTITLE|trim }}{% endif %}
+        </small>
+    </div>
 </div>

@@ -15,28 +15,6 @@ body {
     -ms-filter: “FlipH”;
 }
 
-.text-center {
-    text-align: center!important;
-}
-
-.text-left {
-    text-align: left!important;
-}
-
-.text-right {
-    text-align: right!important;
-}
-
-.section {
-    padding-top: 3rem;
-    padding-bottom: 1rem;
-}
-
-.section-sm {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-}
-
 .section-top, .section-top-md {
     padding-top: 2rem;
 }
