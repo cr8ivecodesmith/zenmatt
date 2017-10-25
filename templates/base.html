@@ -1,21 +1,17 @@
 <!doctype html>
 <html lang="{{ DEFAULT_LANG }}">
 <head>
-    {% block head %}
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="{{ AUTHOR }}">
-    <meta name="description" content="{{ SITESUBTITLE }}">
-
-    <link rel="icon" type="image/ico" href="{{ SITEURL }}/theme/img/favicon.ico">
-
-    <title>{{ SITENAME }}{% block title %}{% endblock title %}</title>
-
-    <link rel="stylesheet" href="{{ SITEURL }}/theme/css/main.css">
-    {% endblock head %}
+{% block head %}
+    {% include 'head_scripts.html' %}
+    {% include 'head_meta.html' %}
+    {% include 'head_icons.html' %}
+    {% include 'head_styles.html' %}
+    <title>{{ SITENAME }}{% if SITESUBTITLE %} - {{ SITESUBTITLE }}{% endif %}{% block title %}{% endblock title %}</title>
+{% endblock head %}
 </head>
 
 <body>
+{% block body %}
 <div id="layout">
     {% include 'side-menu.html' %}
     <div id="main">
@@ -50,9 +46,8 @@
         <!-- SITE_FOOTER:END -->
     </div> <!-- END:main -->
 </div> <!-- END:layout -->
-<!--
-JS Section
--->
-<script src="{{ SITEURL }}/theme/js/pure/ui.js"></script>
+
+{% include 'body_scripts.html' %}
+{% endblock body %}
 </body>
 </html>
