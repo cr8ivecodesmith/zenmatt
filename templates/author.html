@@ -1,1 +1,17 @@
-{% extends "index.html" %}
+{% extends "base.html" %}
+
+{% block title %}: articles by {{ author|trim|title }}{% endblock title %}
+{% block content_permalink %}{{ SITEURL }}/{{ page_name }}.html{% endblock content_permalink %}
+{% block content_bookmark_title %}articles by {{ author|trim|title }}{% endblock content_bookmark_title %}
+{% block content_title %}articles by {{ author|trim|title }}{% endblock content_title %}
+
+{% block content %}
+<div class="col-lg-12 col-md-12 col-sm-12">
+    <dl>
+    {% for article in dates|reverse %}
+        <dt>{{ article.locale_date }}</dt>
+        <dd><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></dd>
+    {% endfor %}
+    </dl>
+</div>
+{% endblock %}
