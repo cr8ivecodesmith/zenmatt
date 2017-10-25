@@ -1,0 +1,12 @@
+<div class="col-lg-12 col-md-12 col-sm-12">
+    <div class="btn-group btn-group-sm section-bot" role="group" aria-label="Archive filters">
+        <a class="btn btn-dark" href="{{ SITEURL }}/archives.html">all</a>
+        <a class="btn btn-dark" href="{{ SITEURL }}/categories.html">categories</a>
+        <a class="btn btn-dark" href="{{ SITEURL }}/tags.html">tags</a>
+        {% set pub_dates = articles|map(attribute='date')|groupby('year')|reverse %}
+        {% for year, _ in pub_dates %}
+        <a class="btn btn-dark" href="{{ SITEURL }}/{{ year }}.html">{{ year }}</a>
+        {% endfor %}
+    </div>
+</div>
+

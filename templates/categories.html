@@ -1,15 +1,16 @@
 {% extends "base.html" %}
 
-{% block title %}: categories{% endblock title %}
+{% block title %}categories{% endblock title %}
 {% block content_permalink %}{{ SITEURL }}/categories.html{% endblock content_permalink %}
 {% block content_bookmark_title %}categories{% endblock content_bookmark_title %}
 {% block content_title %}categories{% endblock content_title %}
 
 {% block content %}
+{% include 'archives_filter.html' %}
 <div class="col-lg-12 col-md-12 col-sm-12">
-    <ul>
+    <ul class="archive-link">
     {% for category, articles in categories|sort %}
-        <li><a href="{{ SITEURL }}/{{ category.url }}">{{ category }}</a> ({{ articles|count }})</li>
+        <li><a href="{{ SITEURL }}/{{ category.url }}">{{ category|trim }}</a> ({{ articles|count }})</li>
     {% endfor %}
     </ul>
 </div>

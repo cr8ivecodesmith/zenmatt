@@ -2,16 +2,16 @@
 
 {% set article = articles[0] if articles else None %}
 
-{% block title %}: {{ article.title|trim|lower if article else "no content" }}{% endblock title %}
+{% block title %}{{ article.title|trim if article else "no content" }}{% endblock title %}
 {% block content_permalink %}{{ SITEURL }}/{{ article.url if article else "#no-content" }}{% endblock content_permalink %}
-{% block content_bookmark_title %}{{ article.title|trim|lower if article else "no content" }}{% endblock content_bookmark_title %}
-{% block content_title %}{{ article.title|trim|lower if article else "no content" }}{% endblock content_title %}
+{% block content_bookmark_title %}{{ article.title|trim if article else "no content" }}{% endblock content_bookmark_title %}
+{% block content_title %}{{ article.title|trim if article else "no content" }}{% endblock content_title %}
 
 {% block content %}
 {% if article %}
     {% include 'article_content.html' %}
     <div class="col-lg-12 col-md-12 col-sm-12">
-        <div class="section-sm">
+        <div class="section-sm archive-link">
             <a href="{{ SITEURL }}/archives.html">
                 <strong>See all posts &raquo;</strong>
             </a>

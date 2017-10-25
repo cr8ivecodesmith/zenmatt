@@ -6,7 +6,7 @@
     {% include 'head_meta.html' %}
     {% include 'head_icons.html' %}
     {% include 'head_styles.html' %}
-    <title>{{ SITENAME|trim|lower }}{% block title %}{% endblock title %}</title>
+    <title>&raquo; {% block title %}{% endblock title %} {{ SITENAME|trim }}</title>
 {% endblock head %}
 </head>
 
@@ -17,8 +17,8 @@
     <div class="row">
         <div class="col-lg-12 col-md-12 col-sm-12">
             <div class="text-left">
-                <h1>
-                    <a href="{{ SITEURL }}/">{{ SITENAME|trim|lower }}</a>:
+                <h1 class="main-header">
+                    <a href="{{ SITEURL }}/">{{ SITENAME|trim }}</a>:
                     <strong>
                         <a href="{% block content_permalink %}{% endblock content_permalink %}" rel="bookmark"
                            title="Permanent link to {% block content_bookmark_title %}{% endblock content_bookmark_title %}">

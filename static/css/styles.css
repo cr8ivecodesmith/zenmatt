@@ -36,3 +36,36 @@ body {
     padding-top: 1rem;
     padding-bottom: 1rem;
 }
+
+.section-top, .section-top-md {
+    padding-top: 2rem;
+}
+
+.section-top-sm {
+    padding-top: 1rem;
+}
+
+.section-top-lg {
+    padding-top: 3rem;
+}
+
+.section-bot, .section-bot-md {
+    padding-bottom: 2rem;
+}
+
+.section-bot-sm {
+    padding-bottom: 1rem;
+}
+
+.section-bot-lg {
+    padding-bottom: 3rem;
+}
+
+.main-header, .main-header a {
+    font-size: 1.3em;
+    color: #333!important;
+}
+
+.archive-link, .archive-link a {
+    color: #333!important;
+}

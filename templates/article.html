@@ -1,9 +1,9 @@
 {% extends 'base.html' %}
 
-{% block title %}: {{ article.title|trim|lower }}{% endblock title %}
+{% block title %}{{ article.title|trim }}{% endblock title %}
 {% block content_permalink %}{{ SITEURL }}/{{ article.url }}{% endblock content_permalink %}
-{% block content_bookmark_title %}{{ article.title|trim|lower }}{% endblock content_bookmark_title %}
-{% block content_title %}{{ article.title|trim|lower }}{% endblock content_title %}
+{% block content_bookmark_title %}{{ article.title|trim }}{% endblock content_bookmark_title %}
+{% block content_title %}{{ article.title|trim }}{% endblock content_title %}
 
 {% block content %}
     {% include 'article_content.html' %}

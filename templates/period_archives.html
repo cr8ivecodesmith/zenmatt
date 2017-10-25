@@ -1,16 +1,17 @@
 {% extends "base.html" %}
 
-{% block title %}: archives for {{ period | reverse | join(' ') }}{% endblock title %}
+{% block title %}articles for {{ period | reverse | join(' ') }}{% endblock title %}
 {% block content_permalink %}{{ SITEURL }}/{{ period | join('/') }}.html{% endblock content_permalink %}
-{% block content_bookmark_title %}archives for {{ period | reverse | join(' ') }}{% endblock content_bookmark_title %}
-{% block content_title %}archives for {{ period | reverse | join(' ') }}{% endblock content_title %}
+{% block content_bookmark_title %}articles for {{ period | reverse | join(' ') }}{% endblock content_bookmark_title %}
+{% block content_title %}articles for {{ period | reverse | join(' ') }}{% endblock content_title %}
 
 {% block content %}
+{% include 'archives_filter.html' %}
 <div class="col-lg-12 col-md-12 col-sm-12">
-    <dl>
+    <dl class="archive-link">
     {% for article in dates %}
         <dt>{{ article.locale_date }}</dt>
-        <dd><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></dd>
+        <dd><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title|trim }}</a></dd>
     {% endfor %}
     </dl>
 </div>
