@@ -2,7 +2,6 @@
 
 {% set article = articles[0] if articles else None %}
 
-{% block title %}{{ article.title|trim if article else "no content" }}{% endblock title %}
 {% block content_permalink %}{{ SITEURL }}/{{ article.url if article else "#no-content" }}{% endblock content_permalink %}
 {% block content_bookmark_title %}{{ article.title|trim if article else "no content" }}{% endblock content_bookmark_title %}
 {% block content_title %}{{ article.title|trim if article else "no content" }}{% endblock content_title %}
