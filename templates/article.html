@@ -1,28 +1,10 @@
 {% extends 'base.html' %}
-{% block title %} : {{ article.title }}{% endblock title %}
+
+{% block title %}: {{ article.title|trim|lower }}{% endblock title %}
+{% block content_permalink %}{{ SITEURL }}/{{ article.url }}{% endblock content_permalink %}
+{% block content_bookmark_title %}{{ article.title|trim|lower }}{% endblock content_bookmark_title %}
+{% block content_title %}{{ article.title|trim|lower }}{% endblock content_title %}
 
 {% block content %}
-<article role="article">
-    <header>
-        <h1>{{ article.title }}</h1>
-        <p class="article-meta">
-            {% if article.date %}
-            <time class="entry-date" datetime="{{ article.date.isoformat() }}">
-                {{ article.date|strftime('%b %d, %Y') }}
-            </time>
-            {% endif %}
-            {% if category %}
-                {% if article.date %} | {% endif %}
-                <span class="category"><a href="{{ SITEURL }}/category/{{ category }}.html">
-                    {{ category }}
-                </a></span>
-            {% endif %}
-        </p>
-    </header>
-    <div class="article-content">
-        {{ article.content }}
-    </div>
-    <footer class="article-footer">
-    </footer>
-</article>
+    {% include 'article_content.html' %}
 {% endblock content %}

@@ -6,48 +6,40 @@
     {% include 'head_meta.html' %}
     {% include 'head_icons.html' %}
     {% include 'head_styles.html' %}
-    <title>{{ SITENAME }}{% if SITESUBTITLE %} - {{ SITESUBTITLE }}{% endif %}{% block title %}{% endblock title %}</title>
+    <title>{{ SITENAME|trim|lower }}{% block title %}{% endblock title %}</title>
 {% endblock head %}
 </head>
 
 <body>
 {% block body %}
-<div id="layout">
-    {% include 'side-menu.html' %}
-    <div id="main">
-        <!-- SITE_HEADER:START -->
-        <header class="header">
-            <h1><a href="{{ SITEURL }}/">{{ SITENAME }}</a></h1>
-            <h2>{{ SITESUBTITLE }}</h2>
-        </header>
-        <!-- SITE_HEADER:END -->
+<div class="container">
 
-        <div class="content">
-            {% block content %}{% endblock content %}
-        </div>
-
-        <!-- SITE_FOOTER:START -->
-        <footer class="footer">
-            <div class="pure-menu pure-menu-horizontal">
-                <p class="pure-menu-heading">{{ COPYRIGHT_TEXT }}</p>
-                <ul class="pure-menu-list">
-                    <li class="pure-menu-item">
-                    <a class="pure-menu-link" href="https://twitter.com/{{ TWITTER_USERNAME }}">Twitter</a>
-                    </li>
-                    <li class="pure-menu-item">
-                    <a class="pure-menu-link" href="{{ SITEURL }}/archives.html">Archive</a>
-                    </li>
-                    <li class="pure-menu-item">
-                    <a class="pure-menu-link" href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}">Feeds</a>
-                    </li>
-                </ul>
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+            <div class="text-left">
+                <h1>
+                    <a href="{{ SITEURL }}/">{{ SITENAME|trim|lower }}</a>:
+                    <strong>
+                        <a href="{% block content_permalink %}{% endblock content_permalink %}" rel="bookmark"
+                           title="Permanent link to {% block content_bookmark_title %}{% endblock content_bookmark_title %}">
+                        {% block content_title %}{% endblock content_title %}</a>
+                    </strong>
+                </h1>
             </div>
-        </footer>
-        <!-- SITE_FOOTER:END -->
-    </div> <!-- END:main -->
-</div> <!-- END:layout -->
+        </div>
+    </div>
 
+    <div class="row section">
+        {% block content %}{% endblock content %}
+    </div>
+
+    <div class="row section">
+        {% include 'footer.html' %}
+    </div>
+
+</div>
 {% include 'body_scripts.html' %}
+{% block content_scripts %}{% endblock content_scripts %}
 {% endblock body %}
 </body>
 </html>

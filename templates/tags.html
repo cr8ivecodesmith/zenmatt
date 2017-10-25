@@ -1,8 +1,16 @@
 {% extends "base.html" %}
+
+{% block title %}: tags{% endblock title %}
+{% block content_permalink %}{{ SITEURL }}/tags.html{% endblock content_permalink %}
+{% block content_bookmark_title %}tags{% endblock content_bookmark_title %}
+{% block content_title %}tags{% endblock content_title %}
+
 {% block content %}
-<ul>
-{% for tag, articles in tags|sort %}
-    <li><a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a> ({{ articles|count }})</li>
-{% endfor %}
-</ul>
+<div class="col-lg-12 col-md-12 col-sm-12">
+    <ul>
+    {% for tag, articles in tags|sort %}
+        <li><a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a> ({{ articles|count }})</li>
+    {% endfor %}
+    </ul>
+</div>
 {% endblock %}

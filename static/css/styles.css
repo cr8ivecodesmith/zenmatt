@@ -1,0 +1,38 @@
+body {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+.copy-left {
+    display: inline-block;
+    text-align: right;
+    margin: 0px;
+    -moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    filter: FlipH;
+    -ms-filter: “FlipH”;
+}
+
+.text-center {
+    text-align: center!important;
+}
+
+.text-left {
+    text-align: left!important;
+}
+
+.text-right {
+    text-align: right!important;
+}
+
+.section {
+    padding-top: 3rem;
+    padding-bottom: 1rem;
+}
+
+.section-sm {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
