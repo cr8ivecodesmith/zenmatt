@@ -1,4 +1,4 @@
-{% if GOOGLE_ANALYTICS %}
+{% if GOOGLE_ANALYTICS|d(False) %}
 <!-- Global Site Tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id={{ GOOGLE_ANALYTICS }}"></script>
 <script>

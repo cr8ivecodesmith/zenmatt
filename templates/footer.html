@@ -12,13 +12,14 @@
             <a class="badge badge-light"
                href="{{ _url }}">{{ _title }}</a>
         {% endfor %}
+
     </div>
 </div>
 <div class="col-lg-12 col-md-12 col-sm-12">
     <div class="text-center">
         <small class="text-muted">
-            <span {% if COPYLEFT %}class="copy-left"{% endif %}>&copy;</span>
-            {% if COPYRIGHT_YEAR %}{{ COPYRIGHT_YEAR }} {% endif %}{{ SITENAME|trim }}
+            <span {% if COPYLEFT|d(False) %}class="copy-left"{% endif %}>&copy;</span>
+            {% if COPYRIGHT_YEAR|d(False) %}{{ COPYRIGHT_YEAR }} {% endif %}{{ SITENAME|trim }}
             {% if SITESUBTITLE|trim %} - {{ SITESUBTITLE|trim }}{% endif %}
         </small>
     </div>
