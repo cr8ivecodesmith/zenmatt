@@ -2,11 +2,15 @@
 <html lang="{{ DEFAULT_LANG }}">
 <head>
 {% block head %}
+    {% block head_meta %}
+        {% include 'head_meta.html' %}
+    {% endblock head_meta %}
+
     {% include 'head_scripts.html' %}
-    {% include 'head_meta.html' %}
     {% include 'head_icons.html' %}
     {% include 'head_styles.html' %}
-    <title>~ {% block title %}{% endblock title %} {{ SITENAME|trim }}</title>
+
+    <title>{% block title %}{% endblock title %} {{ SITENAME|trim }}</title>
 {% endblock head %}
 </head>
 

@@ -1,5 +1,17 @@
 {% extends 'base.html' %}
 
+{% block head_meta %}
+{{ super() }}
+
+<meta content="{{ article.title }} {{ SITENAME|trim }}" property="og:title">
+<meta content="{{ article.summary|striptags|trim }}" property="og:description">
+<meta content="{{ article.header_image }}" property="og:image">
+
+<meta content="{{ article.title }} {{ SITENAME|trim }}" property="twitter:title">
+<meta content="{{ article.summary|striptags|trim }}" property="twitter:description">
+<meta content="{{ article.header_image }}" property="twitter:image">
+{% endblock head_meta %}
+
 {% block title %}{{ article.title|trim }}{% endblock title %}
 {% block content_permalink %}{{ SITEURL }}/{{ article.url }}{% endblock content_permalink %}
 {% block content_bookmark_title %}{{ article.title|trim }}{% endblock content_bookmark_title %}
