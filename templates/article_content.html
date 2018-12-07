@@ -1,3 +1,11 @@
+{% if article.header_image %}
+<div class="col">
+<img class="img-fluid mx-auto d-block zenm-media-max" src="{{ article.header_image }}"
+    {% if article.header_image_alt %}alt="{{ article.header_image_alt|trim }}"{% endif %}>
+</div>
+</div>
+{% endif %}
+
 <div id="article">
     <div class="col-lg-12 col-md-12 col-sm-12">
         <div class="section-bot">
