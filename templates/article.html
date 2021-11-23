@@ -4,12 +4,16 @@
 {{ super() }}
 
 <meta content="{{ article.title }} {{ SITENAME|trim }}" property="og:title">
-<meta content="{{ article.summary|striptags|truncate(50, True) }}" property="og:description">
+<meta content="{{ article.summary|striptags }}" property="og:description">
+{% if article.header_image %}
 <meta content="{{ article.header_image }}" property="og:image">
+{% endif %}
 
 <meta content="{{ article.title }} {{ SITENAME|trim }}" property="twitter:title">
-<meta content="{{ article.summary|striptags|truncate(50, True) }}" property="twitter:description">
+<meta content="{{ article.summary|striptags|truncate(160, True) }}" property="twitter:description">
+{% if article.header_image %}
 <meta content="{{ article.header_image }}" property="twitter:image">
+{% endif %}
 {% endblock head_meta %}
 
 {% block title %}{{ article.title|trim }}{% endblock title %}
